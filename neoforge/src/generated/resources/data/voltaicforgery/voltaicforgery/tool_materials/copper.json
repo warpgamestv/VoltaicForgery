@@ -1,0 +1,15 @@
+{
+  "color": 15170646,
+  "durability": 200,
+  "hardcoded_modifiers": [
+    "magnetic"
+  ],
+  "material_id": "copper",
+  "material_type": "molten",
+  "mining_speed": 5.0,
+  "molten_fluid": "voltaicforgery:molten_copper",
+  "repair_ingredient": "minecraft:copper_ingot",
+  "tool_damage": 2.0,
+  "tool_type": "iron",
+  "weapon_damage": 2.0
+}

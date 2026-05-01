@@ -1,0 +1,13 @@
+{
+  "entries": {
+    "voltaicforgery:molten_copper": "#FF8A3D",
+    "voltaicforgery:molten_iron": "#D8DEE8",
+    "voltaicforgery:molten_gold": "#FFD700",
+    "voltaicforgery:molten_tin": "#C7C7C7",
+    "voltaicforgery:molten_lead": "#5C6274",
+    "voltaicforgery:molten_silver": "#D3D3E8",
+    "voltaicforgery:molten_nickel": "#A8B0A0",
+    "voltaicforgery:molten_bronze": "#CD7F32",
+    "voltaicforgery:molten_electrum": "#E8D56A"
+  }
+}

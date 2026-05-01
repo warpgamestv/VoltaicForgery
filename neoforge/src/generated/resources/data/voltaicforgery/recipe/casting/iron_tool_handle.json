@@ -1,0 +1,13 @@
+{
+  "type": "voltaicforgery:casting",
+  "cast": "voltaicforgery:tool_handle_cast",
+  "fluid": {
+    "amount": 72,
+    "fluid": "voltaicforgery:molten_iron"
+  },
+  "result": {
+    "count": 1,
+    "id": "voltaicforgery:tool_handle_part"
+  },
+  "result_material": "iron"
+}

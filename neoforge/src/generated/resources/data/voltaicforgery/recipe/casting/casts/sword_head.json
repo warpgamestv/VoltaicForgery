@@ -1,0 +1,13 @@
+{
+  "type": "voltaicforgery:casting",
+  "cast": "voltaicforgery:sword_head_part",
+  "consume_cast": true,
+  "fluid": {
+    "amount": 144,
+    "fluid": "voltaicforgery:molten_gold"
+  },
+  "result": {
+    "count": 1,
+    "id": "voltaicforgery:sword_head_cast"
+  }
+}

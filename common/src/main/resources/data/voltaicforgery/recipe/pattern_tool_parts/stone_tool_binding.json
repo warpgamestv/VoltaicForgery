@@ -1,0 +1,12 @@
+{
+  "type": "voltaicforgery:pattern_tool_part",
+  "part": "tool_binding",
+  "pattern": "voltaicforgery:blank_pattern",
+  "material": "#minecraft:stone_tool_materials",
+  "result": {
+    "id": "voltaicforgery:tool_binding_part",
+    "count": 1
+  },
+  "result_material": "stone",
+  "icon": "voltaicforgery:tool_binding_pattern"
+}

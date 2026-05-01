@@ -1,0 +1,12 @@
+{
+  "type": "voltaicforgery:pattern_tool_part",
+  "part": "axe_head",
+  "pattern": "voltaicforgery:blank_pattern",
+  "material": "#minecraft:stone_tool_materials",
+  "result": {
+    "id": "voltaicforgery:axe_head_part",
+    "count": 1
+  },
+  "result_material": "stone",
+  "icon": "voltaicforgery:axe_head_pattern"
+}

@@ -1,0 +1,13 @@
+{
+  "type": "voltaicforgery:casting",
+  "cast": "voltaicforgery:shovel_head_cast",
+  "fluid": {
+    "amount": 144,
+    "fluid": "voltaicforgery:molten_iron"
+  },
+  "result": {
+    "count": 1,
+    "id": "voltaicforgery:shovel_head_part"
+  },
+  "result_material": "iron"
+}

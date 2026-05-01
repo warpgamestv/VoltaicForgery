@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CSC",
+    " G "
+  ],
+  "key": {
+    "C": "minecraft:clay_ball",
+    "S": "minecraft:sand",
+    "G": "minecraft:gravel"
+  },
+  "result": {
+    "id": "voltaicforgery:unfired_crucible_brick",
+    "count": 2
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "voltaicforgery:assembly",
+  "binding": "voltaicforgery:tool_binding_part",
+  "handle": "voltaicforgery:tool_handle_part",
+  "head": "voltaicforgery:sword_head_part",
+  "modifier_slots": 3,
+  "result": "voltaicforgery:modular_sword"
+}

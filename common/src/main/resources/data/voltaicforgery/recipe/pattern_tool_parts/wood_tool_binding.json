@@ -1,0 +1,12 @@
+{
+  "type": "voltaicforgery:pattern_tool_part",
+  "part": "tool_binding",
+  "pattern": "voltaicforgery:blank_pattern",
+  "material": "#minecraft:planks",
+  "result": {
+    "id": "voltaicforgery:tool_binding_part",
+    "count": 1
+  },
+  "result_material": "wood",
+  "icon": "voltaicforgery:tool_binding_pattern"
+}

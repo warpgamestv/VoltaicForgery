@@ -1,0 +1,21 @@
+{
+  "allowed_tools": [
+    "pickaxe",
+    "axe",
+    "shovel",
+    "sword"
+  ],
+  "ingredients": [
+    {
+      "ingredient": "voltaicforgery:induction_coil"
+    }
+  ],
+  "tiers": [
+    {
+      "effect_value": 50000.0,
+      "level": 1,
+      "required_value": 1
+    }
+  ],
+  "trait": "powered"
+}

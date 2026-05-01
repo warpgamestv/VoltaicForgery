@@ -1,0 +1,7 @@
+{
+  "parent": "voltaicforgery:block/solid_fuel_dynamo",
+  "textures": {
+    "0": "voltaicforgery:block/dynamo_on",
+    "particle": "voltaicforgery:block/dynamo_on"
+  }
+}

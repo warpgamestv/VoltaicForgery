@@ -1,0 +1,13 @@
+{
+  "type": "voltaicforgery:casting",
+  "cast": "voltaicforgery:tool_binding_cast",
+  "fluid": {
+    "amount": 72,
+    "fluid": "voltaicforgery:molten_copper"
+  },
+  "result": {
+    "count": 1,
+    "id": "voltaicforgery:tool_binding_part"
+  },
+  "result_material": "copper"
+}

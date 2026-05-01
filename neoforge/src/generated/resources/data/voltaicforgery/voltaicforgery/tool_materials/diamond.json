@@ -1,0 +1,10 @@
+{
+  "color": 3401686,
+  "durability": 1561,
+  "material_id": "diamond",
+  "mining_speed": 8.0,
+  "repair_ingredient": "minecraft:diamond",
+  "tool_damage": 3.0,
+  "tool_type": "diamond",
+  "weapon_damage": 3.0
+}

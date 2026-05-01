@@ -1,0 +1,46 @@
+{
+  "entries": {
+    "voltaicforgery:pickaxe_head_part": {
+      "x": 0.125,
+      "y": -0.0625,
+      "z": -0.0625,
+      "rotation": 0.0,
+      "scale": 1.0
+    },
+    "voltaicforgery:axe_head_part": {
+      "x": 0.1875,
+      "y": 0.125,
+      "z": -0.0625,
+      "rotation": 90.0,
+      "scale": 1.0
+    },
+    "voltaicforgery:shovel_head_part": {
+      "x": 0.1875,
+      "y": -0.1875,
+      "z": -0.0625,
+      "rotation": 0.0,
+      "scale": 1.0
+    },
+    "voltaicforgery:sword_head_part": {
+      "x": 0.125,
+      "y": -0.125,
+      "z": -0.0625,
+      "rotation": 0.0,
+      "scale": 1.0
+    },
+    "voltaicforgery:tool_binding_part": {
+      "x": 0.0625,
+      "y": 0.0,
+      "z": -0.0625,
+      "rotation": 90.0,
+      "scale": 1.0
+    },
+    "voltaicforgery:tool_handle_part": {
+      "x": 0.0,
+      "y": 0.0625,
+      "z": -0.0625,
+      "rotation": 0.0,
+      "scale": 1.0
+    }
+  }
+}

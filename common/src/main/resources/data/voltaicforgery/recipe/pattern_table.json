@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "PCP",
+    "SSS"
+  ],
+  "key": {
+    "S": "minecraft:stick",
+    "P": "minecraft:paper",
+    "C": "minecraft:crafting_table"
+  },
+  "result": {
+    "id": "voltaicforgery:pattern_table",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "voltaicforgery:item/tool_handle_part",
+    "layer1": "voltaicforgery:item/axe_head_part",
+    "layer2": "voltaicforgery:item/axe_binding_part"
+  }
+}

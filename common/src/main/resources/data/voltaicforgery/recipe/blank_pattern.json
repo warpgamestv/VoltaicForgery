@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PS",
+    "SP"
+  ],
+  "key": {
+    "P": "minecraft:paper",
+    "S": "minecraft:stick"
+  },
+  "result": {
+    "id": "voltaicforgery:blank_pattern",
+    "count": 2
+  }
+}

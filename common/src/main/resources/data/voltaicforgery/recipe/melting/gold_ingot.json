@@ -1,0 +1,8 @@
+{
+  "type": "voltaicforgery:melting",
+  "input": "minecraft:gold_ingot",
+  "result_fluid": "voltaicforgery:molten_gold",
+  "result_amount_mb": 144,
+  "required_heat": 500,
+  "time": 120
+}

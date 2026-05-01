@@ -1,0 +1,11 @@
+{
+  "type": "emi:world_interaction",
+  "left": "item:minecraft:iron_ingot",
+  "right": "item:voltaicforgery:induction_crucible",
+  "output": {
+    "type": "fluid",
+    "id": "voltaicforgery:molten_iron",
+    "amount": 144
+  }
+}
+

@@ -1,0 +1,12 @@
+{
+  "type": "voltaicforgery:pattern_tool_part",
+  "part": "tool_handle",
+  "pattern": "voltaicforgery:blank_pattern",
+  "material": "#minecraft:stone_tool_materials",
+  "result": {
+    "id": "voltaicforgery:tool_handle_part",
+    "count": 1
+  },
+  "result_material": "stone",
+  "icon": "voltaicforgery:tool_handle_pattern"
+}

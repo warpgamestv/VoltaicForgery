@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CFC",
+    "CRC"
+  ],
+  "key": {
+    "C": "voltaicforgery:crucible_bricks",
+    "F": "minecraft:furnace",
+    "R": "minecraft:redstone"
+  },
+  "result": {
+    "id": "voltaicforgery:solid_fuel_dynamo",
+    "count": 1
+  }
+}
+

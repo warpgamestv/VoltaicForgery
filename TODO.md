@@ -1,0 +1,106 @@
+# Voltaic Forgery - Task List
+
+## Completed Tasks
+- `[x]` **Data-Driven Assembly Station**
+  - `[x]` Create `AssemblyRecipe` and `AssemblyRecipeInput` in `common/.../recipe`.
+  - `[x]` Register recipe type and serializer in `VoltaicContent` and resolve API constraints.
+  - `[x]` Refactor `AssemblyStationBlockEntity` to use the data-driven recipe system.
+  - `[x]` Implement data generation (`datagen`) for default assembly recipes in `VoltaicAssemblyRecipeProvider`.
+- `[x]` **Tool Tinting and Layering Parity**
+  - `[x]` Generalize `ModularPickaxeTintSource` and `ModularPickaxeColorHandler` into a unified `ModularToolTintSource`.
+  - `[x]` Apply proper tinting and layering to Axe, Shovel, and Sword items.
+  - `[x]` Update client registration hooks (`NeoForgeVoltaicClient`, `FabricVoltaicClient`) to register the unified color handlers.
+- `[x]` **Casting Faucet System**
+  - `[x]` Implement `CastingFaucetBlock` with directional VoxelShapes and `CastingFaucetBlockEntity`.
+  - `[x]` Register the faucet block, block entity, and item across platforms.
+  - `[x]` Remove magic adjacency pull logic from `CastingTableBlockEntity` in favor of active pushed-flow logic from the Faucet.
+- `[x]` **Molten Fluids Registration**
+  - `[x]` Register Iron, Gold, and Copper molten fluids.
+  - `[x]` Pre-register addon-ready molten fluids: Tin, Lead, Silver, Nickel, Bronze, Electrum.
+  - `[x]` Keep molten fluids machine-only by leaving bucket items unregistered.
+- `[x]` **Addon Compatibility**
+  - `[x]` Replace hardcoded `isCastItem()` with `#voltaicforgery:casts` item tag.
+  - `[x]` Balance fluid costs per part type from 72mb to 288mb based on part size.
+  - `[x]` Genericize casting recipe datagen to support all materials.
+- `[x]` **Data-Driven Tool Materials**
+  - `[x]` Expand `voltaicforgery:tool_materials` with color, durability, durability contribution multipliers, mining speed, tool damage, weapon damage, tool type, material type, optional molten fluid, repair ingredient, and hardcoded modifiers.
+  - `[x]` Split modular tool damage so pickaxe/axe/shovel use `tool_damage` and sword uses `weapon_damage`.
+  - `[x]` Mark default materials by production route: `part_table`, `molten`, or `solid`.
+  - `[x]` Document the material schema in `docs/tool_materials.md`.
+- `[x]` **Pattern Table Progression**
+  - `[x]` Implement Pattern Table GUI and button-selected part output flow.
+  - `[x]` Add data-driven `pattern_tool_part` recipes for wood and stone tool parts.
+  - `[x]` Add JEI Pattern Table category for recipe discoverability.
+  - `[x]` Document Pattern Table recipes and pre-crucible progression.
+- `[x]` **Cast Creation Progression**
+  - `[x]` Allow tool parts to be placed into the Casting Table as sacrificial mold inputs.
+  - `[x]` Add data-driven gold casting recipes that turn each tool part into its matching reusable cast.
+  - `[x]` Add recipe support for consumable casting inputs while preserving reusable casts for normal metal part casting.
+  - `[x]` Add a basic gold ingot melting recipe so molten gold is available for cast creation.
+- `[x]` **Sword Asset Integration**
+  - `[x]` Use sword-specific handle, blade, and binding textures for the modular sword item model.
+  - `[x]` Update sword head part generation to use the real sword blade texture.
+  - `[x]` Add sword casts and patterns to the current asset/content flow.
+- `[x]` **Core Content Accessibility**
+  - `[x]` Add a survival path to obtain `crucible_brick` before block crafting.
+  - `[x]` Ensure this progression cleanly feeds into crafting `crucible_bricks` blocks.
+  - `[x]` Add campfire cooking as a low-tech route for firing unfired crucible bricks.
+- `[x]` **Custom GUI Foundation**
+  - `[x]` Replace texture-sheet driven machine screens with consistent drawn panels for Assembly Station, Pattern Table, Modification Station, Induction Crucible, and Solid Fuel Dynamo.
+  - `[x]` Add clear slot frames for machine slots, player inventory, and hotbar slots.
+  - `[x]` Move dense machine values such as energy, heat, fluid amount, burn time, and melt progress into hover tooltips where appropriate.
+
+## Next Steps (Ordered: foundational -> advanced)
+- `[ ]` **Data-Driven Audit Follow-Ups**
+  - `[x]` Make modular pickaxe, axe, and shovel harvest rules read the material registry `tool_type` instead of hardcoded material ids.
+  - `[x]` Route Induction Crucible fluid tank coloring through the shared molten-fluid tint resolver instead of screen-local color guesses.
+  - `[x]` Move molten fluid tint definitions out of hardcoded screen/platform switches and into reloadable client resource JSON.
+  - `[x]` Make Pattern Table part choices data-driven from loaded `pattern_tool_part` recipes instead of fixed to the six built-in part buttons.
+  - `[x]` Make modifier effect strengths data-driven through tier `effect_value`; Haste uses it as mining speed multiplier and Powered uses it as max energy.
+  - `[x]` Make base modifier slot count data-driven per Assembly recipe.
+  - `[ ]` Consider making powered tool energy cost per use data-driven once energy balancing starts.
+- `[ ]` **Stabilize Current Systems**
+  - `[x]` Finish fluid polish pass: verify molten fluids flow correctly and line up visually in-world and in machines.
+  - `[x]` Ensure tool parts render correctly in the Casting Table for all supported part types.
+  - `[x]` Verify fluid rendering within the Casting Table matches `CastingRecipe` output dynamically.
+  - `[x]` Launch a focused playtest pass for Faucet pouring animations and fluid transfers.
+- `[ ]` **Modification Table Completion**
+  - `[x]` Add data-driven modifier definitions with ingredients, allowed tool types, tier costs, and tier progress requirements.
+  - `[x]` Track per-tool modifier state so slots are consumed when a tier starts and progress fills afterward.
+  - `[x]` Apply active Haste tiers to modular pickaxe, axe, and shovel mining speed.
+  - `[x]` Add Modification Station feedback for remaining slots, active/preview modifier tier, Haste percent, and tier progress.
+  - `[x]` Finish blocked-state validation feedback for invalid modifier items, invalid tool types, maxed tiers, and no remaining slots.
+  - `[x]` Add polished modular tool tooltips for modifier slots, active traits, and tier progress.
+  - `[ ]` Validate assembled tools properly accept and process modifiers/traits such as haste and powered in-client.
+  - `[ ]` Define how modifiers should visually render on modular tools.
+- `[ ]` **Compatibility and Recipe Viewer Maintenance**
+  - `[x]` Update deprecated JEI calls (`addIngredients` / `addItemStack`) to latest JEI API.
+  - `[x]` Add JEI display support for Pattern Table recipes.
+  - `[x]` Add JEI display support for data-driven Tool Modifier definitions.
+  - `[x]` Verify JEI display data-driven Assembly, Casting, Melting, and Pattern Table recipes correctly in-client.
+  - `[ ]` Add or verify EMI display support for data-driven recipes.
+- `[ ]` **Art Pass**
+  - `[x]` Add sword part, cast, and pattern assets.
+  - `[x]` Establish the first custom GUI visual pass for core machines.
+  - `[ ]` Create remaining missing textures and GUI assets.
+  - `[ ]` Resolve current missing item/model texture placeholders surfaced in client logs.
+
+## Future Feature Ideas (Post-Core Mechanics)
+- `[ ]` **Full Metal Suite Expansion**
+  - `[ ]` Add ores, raw ores, ingots, nuggets, and blocks for Tin, Lead, Silver, Nickel.
+  - `[ ]` Add melting recipes and tool material stats for all newly added metals.
+  - `[ ]` Add art assets for all new metallurgy content.
+- `[ ]` **Alloying System**
+  - `[ ]` Add alloy production in machines, such as Copper + Tin = Bronze and Gold + Silver = Electrum.
+  - `[ ]` Create a data-driven `AlloyRecipe` type.
+- `[ ]` **Heat Sources and Temperature**
+  - `[ ]` Implement `requiredHeat` for melting recipes and support external heat sources under Crucible.
+- `[ ]` **Voltaic Energy System Refinement**
+  - `[ ]` Continue balancing and interoperability pass across loaders and energy APIs.
+  - `[ ]` Flesh out `InductionCrucible` heating speed/capacity scaling by coil tier.
+- `[ ]` **Multi-Block Smeltery Expansion (Optional)**
+  - `[ ]` Design a dedicated `DrainBlock` if transitioning to a true multiblock smeltery architecture.
+- `[ ]` **Tool Leveling and Progression**
+  - `[ ]` Add tool XP progression to unlock modifier slots over time.
+- `[ ]` **Modular Armor and Shields**
+  - `[ ]` Expand modular system to armor/shields with dedicated parts, traits, and modifiers.

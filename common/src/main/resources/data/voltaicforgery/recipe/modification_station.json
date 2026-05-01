@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CAC",
+    "CCC"
+  ],
+  "key": {
+    "C": "voltaicforgery:crucible_bricks",
+    "A": "minecraft:anvil"
+  },
+  "result": {
+    "id": "voltaicforgery:modification_station",
+    "count": 1
+  }
+}
+

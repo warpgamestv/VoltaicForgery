@@ -1,0 +1,11 @@
+{
+  "color": 8421504,
+  "durability": 131,
+  "material_id": "stone",
+  "material_type": "part_table",
+  "mining_speed": 4.0,
+  "repair_ingredient": "minecraft:cobblestone",
+  "tool_damage": 1.0,
+  "tool_type": "stone",
+  "weapon_damage": 1.0
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CAC",
+    "CCC"
+  ],
+  "key": {
+    "C": "voltaicforgery:crucible_bricks",
+    "A": "minecraft:cauldron"
+  },
+  "result": {
+    "id": "voltaicforgery:induction_crucible",
+    "count": 1
+  }
+}
+

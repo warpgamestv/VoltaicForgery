@@ -1,0 +1,11 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "voltaicforgery:item/pickaxe_head_part",
+    "tints": [
+      {
+        "type": "voltaicforgery:tool_part_material"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CTC",
+    "CCC"
+  ],
+  "key": {
+    "C": "voltaicforgery:crucible_bricks",
+    "T": "minecraft:crafting_table"
+  },
+  "result": {
+    "id": "voltaicforgery:casting_table",
+    "count": 1
+  }
+}
+

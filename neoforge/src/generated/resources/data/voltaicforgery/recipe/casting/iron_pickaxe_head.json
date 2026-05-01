@@ -1,0 +1,13 @@
+{
+  "type": "voltaicforgery:casting",
+  "cast": "voltaicforgery:pickaxe_head_cast",
+  "fluid": {
+    "amount": 216,
+    "fluid": "voltaicforgery:molten_iron"
+  },
+  "result": {
+    "count": 1,
+    "id": "voltaicforgery:pickaxe_head_part"
+  },
+  "result_material": "iron"
+}

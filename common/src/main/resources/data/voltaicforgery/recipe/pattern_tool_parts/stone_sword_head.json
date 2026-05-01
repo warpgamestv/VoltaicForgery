@@ -1,0 +1,12 @@
+{
+  "type": "voltaicforgery:pattern_tool_part",
+  "part": "sword_head",
+  "pattern": "voltaicforgery:blank_pattern",
+  "material": "#minecraft:stone_tool_materials",
+  "result": {
+    "id": "voltaicforgery:sword_head_part",
+    "count": 1
+  },
+  "result_material": "stone",
+  "icon": "voltaicforgery:sword_head_pattern"
+}

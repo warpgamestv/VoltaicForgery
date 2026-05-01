@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "voltaicforgery:solid_fuel_dynamo",
+    "voltaicforgery:induction_crucible",
+    "voltaicforgery:casting_table",
+    "voltaicforgery:assembly_station",
+    "voltaicforgery:modification_station",
+    "voltaicforgery:pattern_table",
+    "voltaicforgery:crucible_bricks"
+  ]
+}
+

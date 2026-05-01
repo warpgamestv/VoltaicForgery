@@ -1,0 +1,12 @@
+{
+  "color": 14211288,
+  "durability": 250,
+  "material_id": "iron",
+  "material_type": "molten",
+  "mining_speed": 6.0,
+  "molten_fluid": "voltaicforgery:molten_iron",
+  "repair_ingredient": "minecraft:iron_ingot",
+  "tool_damage": 2.0,
+  "tool_type": "iron",
+  "weapon_damage": 2.0
+}

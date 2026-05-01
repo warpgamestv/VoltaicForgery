@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CSC",
+    "CCC"
+  ],
+  "key": {
+    "C": "voltaicforgery:crucible_bricks",
+    "S": "minecraft:smithing_table"
+  },
+  "result": {
+    "id": "voltaicforgery:assembly_station",
+    "count": 1
+  }
+}
+

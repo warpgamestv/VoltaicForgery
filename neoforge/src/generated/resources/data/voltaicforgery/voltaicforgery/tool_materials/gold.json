@@ -1,0 +1,10 @@
+{
+  "color": 16574845,
+  "durability": 32,
+  "material_id": "gold",
+  "material_type": "molten",
+  "mining_speed": 12.0,
+  "molten_fluid": "voltaicforgery:molten_gold",
+  "repair_ingredient": "minecraft:gold_ingot",
+  "tool_type": "gold"
+}

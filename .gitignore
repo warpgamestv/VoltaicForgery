@@ -1,0 +1,44 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea/*
+!.idea/scopes
+
+# gradle
+build
+.gradle
+
+# minecraft/dev runs
+run
+runs
+*/run
+*/runs
+
+# generated local scratch/dependency inspection files
+.tmp-*
+*.tmp
+tasks.log
+fabric-api-temp.jar
+**/src/generated/resources/.cache/
+
+# archives and jars created while investigating dependencies
+*.zip
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# editor local state
+.vscode/
+*-autosave.kra
+
+# other
+eclipse

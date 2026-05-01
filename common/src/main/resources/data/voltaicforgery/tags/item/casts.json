@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "voltaicforgery:pickaxe_head_cast",
+    "voltaicforgery:axe_head_cast",
+    "voltaicforgery:shovel_head_cast",
+    "voltaicforgery:sword_head_cast",
+    "voltaicforgery:tool_binding_cast",
+    "voltaicforgery:tool_handle_cast"
+  ]
+}

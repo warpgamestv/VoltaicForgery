@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": "voltaicforgery:unfired_crucible_brick",
+  "result": {
+    "id": "voltaicforgery:crucible_brick"
+  },
+  "experience": 0.3,
+  "cookingtime": 200
+}

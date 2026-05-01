@@ -1,0 +1,9 @@
+{
+  "type": "voltaicforgery:melting",
+  "input": "minecraft:copper_ingot",
+  "result_fluid": "voltaicforgery:molten_copper",
+  "result_amount_mb": 144,
+  "required_heat": 400,
+  "time": 100
+}
+

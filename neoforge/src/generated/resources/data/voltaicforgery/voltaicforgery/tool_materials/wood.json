@@ -1,0 +1,9 @@
+{
+  "color": 10976843,
+  "durability": 59,
+  "material_id": "wood",
+  "material_type": "part_table",
+  "mining_speed": 2.0,
+  "repair_ingredient": "minecraft:oak_planks",
+  "tool_type": "wood"
+}

@@ -1,0 +1,10 @@
+{
+  "color": 4864827,
+  "durability": 2031,
+  "material_id": "netherite",
+  "mining_speed": 9.0,
+  "repair_ingredient": "minecraft:netherite_ingot",
+  "tool_damage": 4.0,
+  "tool_type": "netherite",
+  "weapon_damage": 4.0
+}

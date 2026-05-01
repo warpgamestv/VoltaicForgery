@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "voltaicforgery:block/casting_faucet"
+    },
+    "facing=north": {
+      "model": "voltaicforgery:block/casting_faucet",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "voltaicforgery:block/casting_faucet",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "voltaicforgery:block/casting_faucet",
+      "y": 180
+    }
+  }
+}

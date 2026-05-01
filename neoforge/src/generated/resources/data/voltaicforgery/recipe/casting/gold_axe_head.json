@@ -1,0 +1,13 @@
+{
+  "type": "voltaicforgery:casting",
+  "cast": "voltaicforgery:axe_head_cast",
+  "fluid": {
+    "amount": 288,
+    "fluid": "voltaicforgery:molten_gold"
+  },
+  "result": {
+    "count": 1,
+    "id": "voltaicforgery:axe_head_part"
+  },
+  "result_material": "gold"
+}

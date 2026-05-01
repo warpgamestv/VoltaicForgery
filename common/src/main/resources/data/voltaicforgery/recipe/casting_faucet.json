@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C C",
+    "CCC"
+  ],
+  "key": {
+    "C": "voltaicforgery:crucible_brick"
+  },
+  "result": {
+    "id": "voltaicforgery:casting_faucet",
+    "count": 1
+  }
+}

@@ -73,6 +73,7 @@ public final class CastingTableBlockEntityRenderer implements BlockEntityRendere
 
         // Always show the cast mold if present.
         ItemStack castStack = be.getItem(CastingTableBlockEntity.SLOT_CAST);
+        state.castItemId = BuiltInRegistries.ITEM.getKey(castStack.getItem());
         if (state.fluidTint != 0) {
             int requiredMb = be.getMatchedRecipeAmountMb();
             if (requiredMb <= 0) {
@@ -98,15 +99,15 @@ public final class CastingTableBlockEntityRenderer implements BlockEntityRendere
             renderFluid(state, poseStack, collector);
         }
         if (!state.cast.isEmpty()) {
-            renderItem(state.cast, poseStack, collector, state, 0.001F, 0.0F);
+            renderItem(state.cast, poseStack, collector, state, state.castItemId, 0.001F, 0.0F);
         }
         if (!state.output.isEmpty()) {
             // Render the output slightly "higher" (more negative Z after X-rotation) so it sits visually on top of the cast
-            renderItem(state.output, poseStack, collector, state, -0.001F, 90.0F);
+            renderItem(state.output, poseStack, collector, state, state.outputItemId, -0.001F, 90.0F);
         }
     }
 
-    private void renderItem(ItemStackRenderState itemState, PoseStack poseStack, SubmitNodeCollector collector, State state, float zOffset, float extraYRot) {
+    private void renderItem(ItemStackRenderState itemState, PoseStack poseStack, SubmitNodeCollector collector, State state, Identifier itemId, float zOffset, float extraYRot) {
         poseStack.pushPose();
         // Center on the table
         poseStack.translate(0.5F, 1.001F + OFFSET_Y, 0.5F);
@@ -121,12 +122,10 @@ public final class CastingTableBlockEntityRenderer implements BlockEntityRendere
         float scale = 14.0F / 16.0F;
         poseStack.scale(scale, scale, scale);
 
-        if (itemState == state.output) {
-            CastingTablePartTransforms.Transform transform = CastingTablePartTransforms.get(state.outputItemId);
-            poseStack.translate(transform.x(), transform.y(), transform.z());
-            poseStack.mulPose(Axis.ZP.rotationDegrees(transform.rotation()));
-            poseStack.scale(transform.scale(), transform.scale(), transform.scale());
-        }
+        CastingTablePartTransforms.Transform transform = CastingTablePartTransforms.get(itemId);
+        poseStack.translate(transform.x(), transform.y(), transform.z());
+        poseStack.mulPose(Axis.ZP.rotationDegrees(transform.rotation()));
+        poseStack.scale(transform.scale(), transform.scale(), transform.scale());
 
         // Apply a tiny Z-offset to prevent z-fighting. Negative Z is visually "up" because of the X rotation.
         poseStack.translate(0.0F, 0.0F, zOffset);
@@ -172,6 +171,7 @@ public final class CastingTableBlockEntityRenderer implements BlockEntityRendere
         public final ItemStackRenderState cast = new ItemStackRenderState();
         public final ItemStackRenderState output = new ItemStackRenderState();
         public Direction facing = Direction.NORTH;
+        public net.minecraft.resources.Identifier castItemId = net.minecraft.resources.Identifier.fromNamespaceAndPath("minecraft", "air");
         public net.minecraft.resources.Identifier outputItemId = net.minecraft.resources.Identifier.fromNamespaceAndPath("minecraft", "air");
         public int fluidTint = 0;
         public float fluidFill = 0.0F;

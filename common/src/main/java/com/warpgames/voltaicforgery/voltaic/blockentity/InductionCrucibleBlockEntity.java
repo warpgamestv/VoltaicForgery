@@ -308,6 +308,7 @@ public class InductionCrucibleBlockEntity extends BlockEntity implements Contain
             items.set(SLOT_INPUT, ItemStack.EMPTY);
         }
         tank.fill(recipe.resultFluid(), recipe.resultAmountMb(), false);
+        currentHeat = Math.max(0, currentHeat - recipe.requiredHeat());
         meltProgress = 0;
         return true;
     }

@@ -61,12 +61,18 @@ public final class CastingTablePartTransforms {
     private static Map<Identifier, Transform> defaultTransforms() {
         float pixel = 1.0F / 16.0F;
         Map<Identifier, Transform> defaults = new HashMap<>();
-        defaults.put(VoltaicContent.id("axe_head_part"), new Transform(0.0F, 2.0F * pixel, 0.0F, 0.0F, 1.0F));
-        defaults.put(VoltaicContent.id("shovel_head_part"), new Transform(-1.5F * pixel, 1.5F * pixel, 0.0F, 0.0F, 1.0F));
-        defaults.put(VoltaicContent.id("sword_head_part"), new Transform(0.0F, 1.0F * pixel, 0.0F, 0.0F, 1.0F));
-        defaults.put(VoltaicContent.id("tool_binding_part"), new Transform(2.5F * pixel, 0.0F, 0.0F, 0.0F, 1.0F));
-        defaults.put(VoltaicContent.id("tool_handle_part"), new Transform(2.0F * pixel, -2.0F * pixel, 0.0F, 0.0F, 1.0F));
+        putPair(defaults, "pickaxe_head_part", "pickaxe_head_cast", new Transform(2.0F * pixel, -1.0F * pixel, -1.0F * pixel, 0.0F, 1.0F));
+        putPair(defaults, "axe_head_part", "axe_head_cast", new Transform(3.0F * pixel, 2.0F * pixel, -1.0F * pixel, 90.0F, 1.0F));
+        putPair(defaults, "shovel_head_part", "shovel_head_cast", new Transform(3.0F * pixel, -3.0F * pixel, -1.0F * pixel, 0.0F, 1.0F));
+        putPair(defaults, "sword_head_part", "sword_head_cast", new Transform(2.0F * pixel, -2.0F * pixel, -1.0F * pixel, 0.0F, 1.0F));
+        putPair(defaults, "tool_binding_part", "tool_binding_cast", new Transform(1.0F * pixel, 0.0F, -1.0F * pixel, 90.0F, 1.0F));
+        putPair(defaults, "tool_handle_part", "tool_handle_cast", new Transform(0.0F, 1.0F * pixel, -1.0F * pixel, 0.0F, 1.0F));
         return defaults;
+    }
+
+    private static void putPair(Map<Identifier, Transform> defaults, String partItem, String castItem, Transform transform) {
+        defaults.put(VoltaicContent.id(partItem), transform);
+        defaults.put(VoltaicContent.id(castItem), transform);
     }
 
     public record Transform(float x, float y, float z, float rotation, float scale) {

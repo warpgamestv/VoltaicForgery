@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "CCC",
+    " C ",
     "CTC",
-    "CCC"
+    " C "
   ],
   "key": {
     "C": "voltaicforgery:crucible_bricks",

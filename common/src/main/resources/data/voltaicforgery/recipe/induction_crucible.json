@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " C ",
-    "CAC",
-    " C "
+    "CCC",
+    "CFC",
+    "CCC"
   ],
   "key": {
     "C": "voltaicforgery:crucible_bricks",
-    "A": "minecraft:cauldron"
+    "F": "minecraft:furnace"
   },
   "result": {
     "id": "voltaicforgery:induction_crucible",

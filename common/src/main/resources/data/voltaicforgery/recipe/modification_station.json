@@ -1,13 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "CCC",
-    "CAC",
-    "CCC"
+    "CRC",
+    "CTC",
+    "CRC"
   ],
   "key": {
     "C": "voltaicforgery:crucible_bricks",
-    "A": "minecraft:anvil"
+    "R": "minecraft:redstone",
+    "T": "minecraft:crafting_table"
   },
   "result": {
     "id": "voltaicforgery:modification_station",

@@ -60,6 +60,7 @@ public final class CastingTableBlockEntityRenderer implements BlockEntityRendere
         // Check for output item first
         ItemStack outputStack = be.getItem(CastingTableBlockEntity.SLOT_OUTPUT);
         state.outputItemId = BuiltInRegistries.ITEM.getKey(outputStack.getItem());
+        state.outputUsesPartTransform = !outputStack.is(CastingTableBlock.CASTS_TAG);
         if (!outputStack.isEmpty()) {
             Minecraft.getInstance().getItemModelResolver().updateForTopItem(
                     state.output,
@@ -104,7 +105,7 @@ public final class CastingTableBlockEntityRenderer implements BlockEntityRendere
         }
         if (!state.output.isEmpty()) {
             // Render the output slightly "higher" (more negative Z after X-rotation) so it sits visually on top of the cast
-            renderItem(state.output, poseStack, collector, state, state.outputItemId, -0.001F, 90.0F, true);
+            renderItem(state.output, poseStack, collector, state, state.outputItemId, -0.001F, state.outputUsesPartTransform ? 90.0F : 0.0F, state.outputUsesPartTransform);
         }
     }
 
@@ -177,6 +178,7 @@ public final class CastingTableBlockEntityRenderer implements BlockEntityRendere
         public net.minecraft.resources.Identifier castItemId = net.minecraft.resources.Identifier.fromNamespaceAndPath("minecraft", "air");
         public net.minecraft.resources.Identifier outputItemId = net.minecraft.resources.Identifier.fromNamespaceAndPath("minecraft", "air");
         public boolean castUsesPartTransform = false;
+        public boolean outputUsesPartTransform = false;
         public int fluidTint = 0;
         public float fluidFill = 0.0F;
     }

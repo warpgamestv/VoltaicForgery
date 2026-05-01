@@ -1,0 +1,8 @@
+{
+  "type": "voltaicforgery:melting",
+  "input": "minecraft:raw_iron",
+  "result_fluid": "voltaicforgery:molten_iron",
+  "result_amount_mb": 288,
+  "required_heat": 600,
+  "time": 140
+}

@@ -40,6 +40,17 @@ public final class VoltaicLanguageProvider implements DataProvider {
         add(json, "block.voltaicforgery.modification_station", "Modification Station");
         add(json, "block.voltaicforgery.pattern_table", "Pattern Table");
         add(json, "block.voltaicforgery.crucible_bricks", "Crucible Bricks");
+        add(json, "block.voltaicforgery.casting_faucet", "Casting Faucet");
+
+        add(json, "item.voltaicforgery.solid_fuel_dynamo", "Solid Fuel Dynamo");
+        add(json, "item.voltaicforgery.induction_crucible", "Induction Crucible");
+        add(json, "item.voltaicforgery.casting_table", "Casting Table");
+        add(json, "item.voltaicforgery.assembly_station", "Assembly Station");
+        add(json, "item.voltaicforgery.modification_station", "Modification Station");
+        add(json, "item.voltaicforgery.pattern_table", "Pattern Table");
+        add(json, "item.voltaicforgery.crucible_bricks", "Crucible Bricks");
+        add(json, "item.voltaicforgery.casting_faucet", "Casting Faucet");
+
         add(json, "fluid.voltaicforgery.molten_copper", "Molten Copper");
         add(json, "fluid.voltaicforgery.molten_iron", "Molten Iron");
         add(json, "fluid.voltaicforgery.molten_gold", "Molten Gold");
@@ -49,9 +60,6 @@ public final class VoltaicLanguageProvider implements DataProvider {
         add(json, "fluid.voltaicforgery.molten_nickel", "Molten Nickel");
         add(json, "fluid.voltaicforgery.molten_bronze", "Molten Bronze");
         add(json, "fluid.voltaicforgery.molten_electrum", "Molten Electrum");
-        
-        add(json, "block.voltaicforgery.casting_faucet", "Casting Faucet");
-
         add(json, "item.voltaicforgery.coil_upgrade_basic", "Basic Coil Upgrade");
         add(json, "item.voltaicforgery.coil_upgrade_advanced", "Advanced Coil Upgrade");
         add(json, "item.voltaicforgery.coil_upgrade_elite", "Elite Coil Upgrade");

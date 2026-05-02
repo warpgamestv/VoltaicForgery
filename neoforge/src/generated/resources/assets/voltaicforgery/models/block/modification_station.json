@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "minecraft:block/smithing_table"
+    "all": "voltaicforgery:block/modification_station"
   }
 }

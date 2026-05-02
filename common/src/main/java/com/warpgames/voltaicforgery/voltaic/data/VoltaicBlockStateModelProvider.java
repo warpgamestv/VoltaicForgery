@@ -29,7 +29,7 @@ public final class VoltaicBlockStateModelProvider implements DataProvider {
         addBlockStateOnly(futures, output, "casting_table");
         addBlockStateOnly(futures, output, "assembly_station");
         addHorizontalFacing(futures, output, "casting_faucet");
-        addCubeAllMachine(futures, output, "modification_station", "minecraft:block/smithing_table");
+        addCubeAllMachine(futures, output, "modification_station", VoltaicContent.id("block/modification_station").toString());
         addCubeAllMachine(futures, output, "crucible_bricks", VoltaicContent.id("block/crucible_bricks").toString());
         return CompletableFuture.allOf(futures.toArray(CompletableFuture[]::new));
     }

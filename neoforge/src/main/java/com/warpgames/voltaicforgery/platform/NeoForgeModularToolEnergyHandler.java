@@ -2,26 +2,26 @@ package com.warpgames.voltaicforgery.platform;
 
 import com.warpgames.voltaicforgery.voltaic.VoltaicContent;
 import com.warpgames.voltaicforgery.voltaic.api.energy.VoltaicItemEnergy;
-import com.warpgames.voltaicforgery.voltaic.item.ModularPickaxeItem;
+import com.warpgames.voltaicforgery.voltaic.item.IModularTool;
 import com.warpgames.voltaicforgery.voltaic.item.component.ToolEnergyStorageComponent;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.transfer.energy.EnergyHandler;
 import net.neoforged.neoforge.transfer.transaction.TransactionContext;
 
 /**
- * Exposes the modular pickaxe's {@code TOOL_ENERGY} component to NeoForge {@code Capabilities.Energy.ITEM} (FE/RF).
+ * Exposes {@code TOOL_ENERGY} on modular tools to NeoForge {@code Capabilities.Energy.ITEM} (FE/RF).
  */
-public final class NeoForgeModularPickaxeItemEnergyHandler implements EnergyHandler {
+public final class NeoForgeModularToolEnergyHandler implements EnergyHandler {
 
     private final ItemStack stack;
 
-    public NeoForgeModularPickaxeItemEnergyHandler(ItemStack stack) {
+    public NeoForgeModularToolEnergyHandler(ItemStack stack) {
         this.stack = stack;
     }
 
     @Override
     public long getAmountAsLong() {
-        if (!isPoweredPickaxeWithEnergy()) {
+        if (!isPoweredModularTool()) {
             return 0L;
         }
         return VoltaicItemEnergy.INSTANCE.getEnergy(stack);
@@ -29,7 +29,7 @@ public final class NeoForgeModularPickaxeItemEnergyHandler implements EnergyHand
 
     @Override
     public long getCapacityAsLong() {
-        if (!isPoweredPickaxeWithEnergy()) {
+        if (!isPoweredModularTool()) {
             return 0L;
         }
         return VoltaicItemEnergy.INSTANCE.getMaxEnergy(stack);
@@ -37,7 +37,7 @@ public final class NeoForgeModularPickaxeItemEnergyHandler implements EnergyHand
 
     @Override
     public int insert(int amount, TransactionContext transaction) {
-        if (amount <= 0 || !isPoweredPickaxeWithEnergy()) {
+        if (amount <= 0 || !isPoweredModularTool()) {
             return 0;
         }
         if (amount > Integer.MAX_VALUE) {
@@ -51,7 +51,7 @@ public final class NeoForgeModularPickaxeItemEnergyHandler implements EnergyHand
 
     @Override
     public int extract(int amount, TransactionContext context) {
-        if (amount <= 0 || !isPoweredPickaxeWithEnergy()) {
+        if (amount <= 0 || !isPoweredModularTool()) {
             return 0;
         }
         if (amount > Integer.MAX_VALUE) {
@@ -63,8 +63,8 @@ public final class NeoForgeModularPickaxeItemEnergyHandler implements EnergyHand
         );
     }
 
-    private boolean isPoweredPickaxeWithEnergy() {
-        if (!(stack.getItem() instanceof ModularPickaxeItem)) {
+    private boolean isPoweredModularTool() {
+        if (!(stack.getItem() instanceof IModularTool)) {
             return false;
         }
         ToolEnergyStorageComponent c = stack.getOrDefault(

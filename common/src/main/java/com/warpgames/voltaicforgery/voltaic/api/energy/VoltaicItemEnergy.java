@@ -17,7 +17,7 @@ public final class VoltaicItemEnergy implements IEnergyTool {
 
     public static boolean hasUsableEnergy(ItemStack stack) {
         ToolEnergyStorageComponent c = getOrEmpty(stack);
-        return c.isEnabled() && c.currentEnergy() > ToolEnergyStorageComponent.ENERGY_PER_USE;
+        return c.isEnabled() && c.currentEnergy() >= ToolEnergyStorageComponent.ENERGY_PER_USE;
     }
 
     private static ToolEnergyStorageComponent getOrEmpty(ItemStack stack) {
@@ -75,7 +75,7 @@ public final class VoltaicItemEnergy implements IEnergyTool {
      */
     public static boolean tryConsumeForDurabilityUse(ItemStack stack) {
         ToolEnergyStorageComponent c = getOrEmpty(stack);
-        if (!c.isEnabled() || c.currentEnergy() <= ToolEnergyStorageComponent.ENERGY_PER_USE) {
+        if (!c.isEnabled() || c.currentEnergy() < ToolEnergyStorageComponent.ENERGY_PER_USE) {
             return false;
         }
         stack.set(VoltaicContent.TOOL_ENERGY.get(), c.withCurrent(c.currentEnergy() - ToolEnergyStorageComponent.ENERGY_PER_USE));

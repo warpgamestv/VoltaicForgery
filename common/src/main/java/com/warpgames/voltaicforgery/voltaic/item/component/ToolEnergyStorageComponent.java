@@ -36,7 +36,7 @@ public record ToolEnergyStorageComponent(long currentEnergy, long maxEnergy) {
     }
 
     public boolean canAffordUse() {
-        return currentEnergy > ENERGY_PER_USE;
+        return currentEnergy >= ENERGY_PER_USE;
     }
 
     public ToolEnergyStorageComponent withCurrent(long value) {

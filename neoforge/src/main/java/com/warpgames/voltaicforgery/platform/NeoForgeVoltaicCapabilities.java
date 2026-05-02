@@ -3,7 +3,7 @@ package com.warpgames.voltaicforgery.platform;
 import com.warpgames.voltaicforgery.platform.services.IVoltaicCapabilities;
 import com.warpgames.voltaicforgery.voltaic.VoltaicContent;
 import com.warpgames.voltaicforgery.voltaic.blockentity.CastingTableBlockEntity;
-import com.warpgames.voltaicforgery.voltaic.item.ModularPickaxeItem;
+import com.warpgames.voltaicforgery.voltaic.item.IModularTool;
 import com.warpgames.voltaicforgery.voltaic.blockentity.InductionCrucibleBlockEntity;
 import com.warpgames.voltaicforgery.voltaic.blockentity.SolidFuelDynamoBlockEntity;
 import net.minecraft.world.item.ItemStack;
@@ -45,10 +45,13 @@ public class NeoForgeVoltaicCapabilities implements IVoltaicCapabilities {
     private static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
         event.registerItem(
                 Capabilities.Energy.ITEM,
-                (itemStack, context) -> itemStack.getItem() instanceof ModularPickaxeItem
-                        ? new NeoForgeModularPickaxeItemEnergyHandler(itemStack)
+                (itemStack, context) -> itemStack.getItem() instanceof IModularTool
+                        ? new NeoForgeModularToolEnergyHandler(itemStack)
                         : null,
-                VoltaicContent.MODULAR_PICKAXE.get()
+                VoltaicContent.MODULAR_PICKAXE.get(),
+                VoltaicContent.MODULAR_AXE.get(),
+                VoltaicContent.MODULAR_SHOVEL.get(),
+                VoltaicContent.MODULAR_SWORD.get()
         );
 
         event.registerBlockEntity(

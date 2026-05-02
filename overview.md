@@ -227,7 +227,7 @@ Key files:
 - `common/src/main/java/.../item/ModularPickaxeItem.java`
 - `common/src/main/java/.../mixin/ItemStackPostHurtEnemyMixin.java`
 - `neoforge/src/main/java/.../platform/NeoForgeVoltaicCapabilities.java`
-- `neoforge/src/main/java/.../platform/NeoForgeModularPickaxeItemEnergyHandler.java`
+- `neoforge/src/main/java/.../platform/NeoForgeModularToolEnergyHandler.java`
 
 ### Solid Fuel Dynamo (block + BE + menu + screen)
 

@@ -1,7 +1,7 @@
 package com.warpgames.voltaicforgery.mixin;
 
 import com.warpgames.voltaicforgery.voltaic.api.energy.VoltaicItemEnergy;
-import com.warpgames.voltaicforgery.voltaic.item.ModularPickaxeItem;
+import com.warpgames.voltaicforgery.voltaic.item.IModularTool;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -24,7 +24,7 @@ public abstract class ItemStackPostHurtEnemyMixin {
             int amount,
             LivingEntity holder,
             EquipmentSlot slot) {
-        if (self.getItem() instanceof ModularPickaxeItem && VoltaicItemEnergy.tryConsumeForDurabilityUse(self)) {
+        if (self.getItem() instanceof IModularTool && VoltaicItemEnergy.tryConsumeForDurabilityUse(self)) {
             self.hurtAndBreak(0, holder, slot);
         } else {
             self.hurtAndBreak(amount, holder, slot);

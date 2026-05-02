@@ -42,7 +42,6 @@ public final class VoltaicItemModelProvider implements DataProvider {
         addGeneratedItem(futures, output, "coil_upgrade_basic", "item/coil_upgrade_basic");
         addGeneratedItem(futures, output, "coil_upgrade_advanced", "item/coil_upgrade_advanced");
         addGeneratedItem(futures, output, "coil_upgrade_elite", "item/coil_upgrade_elite");
-        addGeneratedItem(futures, output, "induction_coil", "item/coil_upgrade_basic");
         addTintedGeneratedItem(futures, output, "pickaxe_head_part", "item/pickaxe_head_part");
         addTintedGeneratedItem(futures, output, "axe_head_part", "item/axe_head_part");
         addTintedGeneratedItem(futures, output, "shovel_head_part", "item/shovel_head_part");

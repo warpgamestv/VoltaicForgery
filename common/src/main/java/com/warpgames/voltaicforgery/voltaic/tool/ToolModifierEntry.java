@@ -19,17 +19,24 @@ public record ToolModifierEntry(
         List<Tier> tiers
 ) {
 
-    public record IngredientValue(Ingredient ingredient, int value) {
+    public record IngredientValue(Ingredient ingredient, int value, int forTier) {
+        /** When negative, this ingredient applies to any tier step (see redstone haste). When {@code >= 1}, only matches that tier level. */
         public static final Codec<IngredientValue> CODEC = RecordCodecBuilder.create(instance -> instance.group(
                 Ingredient.CODEC.fieldOf("ingredient").forGetter(IngredientValue::ingredient),
-                Codec.INT.optionalFieldOf("value", 1).forGetter(IngredientValue::value)
+                Codec.INT.optionalFieldOf("value", 1).forGetter(IngredientValue::value),
+                Codec.INT.optionalFieldOf("for_tier", -1).forGetter(IngredientValue::forTier)
         ).apply(instance, IngredientValue::new));
 
         public static final StreamCodec<RegistryFriendlyByteBuf, IngredientValue> STREAM_CODEC = StreamCodec.composite(
                 Ingredient.CONTENTS_STREAM_CODEC, IngredientValue::ingredient,
                 ByteBufCodecs.VAR_INT, IngredientValue::value,
+                ByteBufCodecs.VAR_INT, IngredientValue::forTier,
                 IngredientValue::new
         );
+
+        public IngredientValue(Ingredient ingredient, int value) {
+            this(ingredient, value, -1);
+        }
 
         public IngredientValue {
             value = Math.max(1, value);

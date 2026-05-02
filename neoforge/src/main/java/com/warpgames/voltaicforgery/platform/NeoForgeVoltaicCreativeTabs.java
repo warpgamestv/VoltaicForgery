@@ -58,7 +58,6 @@ public final class NeoForgeVoltaicCreativeTabs {
         event.accept(VoltaicContent.COIL_UPGRADE_BASIC.get());
         event.accept(VoltaicContent.COIL_UPGRADE_ADVANCED.get());
         event.accept(VoltaicContent.COIL_UPGRADE_ELITE.get());
-        event.accept(VoltaicContent.INDUCTION_COIL.get());
     }
 
     private static void addToolPartsForAllMaterials(BuildCreativeModeTabContentsEvent event, HolderLookup.Provider registries) {

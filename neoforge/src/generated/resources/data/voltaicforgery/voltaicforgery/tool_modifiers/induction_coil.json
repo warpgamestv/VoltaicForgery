@@ -1,4 +1,5 @@
 {
+  "trait": "powered",
   "allowed_tools": [
     "pickaxe",
     "axe",
@@ -7,15 +8,39 @@
   ],
   "ingredients": [
     {
-      "ingredient": "voltaicforgery:induction_coil"
+      "ingredient": "voltaicforgery:coil_upgrade_basic",
+      "value": 1,
+      "for_tier": 1
+    },
+    {
+      "ingredient": "voltaicforgery:coil_upgrade_advanced",
+      "value": 1,
+      "for_tier": 2
+    },
+    {
+      "ingredient": "voltaicforgery:coil_upgrade_elite",
+      "value": 1,
+      "for_tier": 3
     }
   ],
   "tiers": [
     {
       "effect_value": 50000.0,
       "level": 1,
-      "required_value": 1
+      "required_value": 1,
+      "slot_cost": 1
+    },
+    {
+      "effect_value": 150000.0,
+      "level": 2,
+      "required_value": 1,
+      "slot_cost": 1
+    },
+    {
+      "effect_value": 400000.0,
+      "level": 3,
+      "required_value": 1,
+      "slot_cost": 1
     }
-  ],
-  "trait": "powered"
+  ]
 }

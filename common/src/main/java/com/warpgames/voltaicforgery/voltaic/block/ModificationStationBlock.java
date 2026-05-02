@@ -24,6 +24,7 @@ public class ModificationStationBlock extends BaseEntityBlock {
     public ModificationStationBlock() {
         super(BlockBehaviour.Properties.of()
                 .setId(ResourceKey.create(Registries.BLOCK, VoltaicContent.id("modification_station")))
+                .noOcclusion()
                 .strength(3.0F));
     }
 

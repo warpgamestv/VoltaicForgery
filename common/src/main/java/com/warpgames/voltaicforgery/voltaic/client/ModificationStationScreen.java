@@ -152,7 +152,7 @@ public class ModificationStationScreen extends AbstractContainerScreen<Modificat
         }
 
         HolderLookup.Provider registries = minecraft.level.registryAccess();
-        Optional<ToolModifierQuery.Match> match = ToolModifierQuery.findForStack(registries, input);
+        Optional<ToolModifierQuery.ModifyMatch> match = ToolModifierQuery.findForToolAndMaterial(registries, tool, input);
         if (match.isEmpty()) {
             return Component.translatable("gui.voltaicforgery.modification_station.invalid_material");
         }
@@ -162,24 +162,11 @@ public class ModificationStationScreen extends AbstractContainerScreen<Modificat
             return Component.translatable("gui.voltaicforgery.modification_station.wrong_tool");
         }
 
-        List<String> traits = ToolTraits.normalizeIds(List.of(modifier.trait()));
-        if (traits.isEmpty()) {
-            return Component.translatable("gui.voltaicforgery.modification_station.blocked");
-        }
-
-        ToolModifierState state = ToolModifierState.find(
-                tool.getOrDefault(VoltaicContent.TOOL_MODIFIERS.get(), List.of()),
-                traits.get(0)
-        ).orElse(new ToolModifierState(traits.get(0), 0, 0, 0));
-        boolean startingTier = !state.hasStartedTier();
-        int tierLevel = startingTier ? state.activeLevel() + 1 : state.startedTier();
-        Optional<ToolModifierEntry.Tier> tier = modifier.tier(tierLevel);
-        if (tier.isEmpty()) {
-            return Component.translatable("gui.voltaicforgery.modification_station.max_tier");
-        }
+        ToolModifierEntry.Tier tier = match.get().tier();
+        boolean startingTier = match.get().startingTier();
 
         int remaining = tool.getOrDefault(VoltaicContent.TOOL_MODIFIER_SLOTS.get(), DEFAULT_MODIFIER_SLOTS);
-        if (startingTier && tier.get().slotCost() > remaining) {
+        if (startingTier && tier.slotCost() > remaining) {
             return Component.translatable("gui.voltaicforgery.modification_station.no_slots");
         }
         return Component.translatable("gui.voltaicforgery.modification_station.blocked");

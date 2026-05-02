@@ -1,7 +1,6 @@
 package com.warpgames.voltaicforgery.voltaic.registry;
 
 import com.warpgames.voltaicforgery.voltaic.VoltaicContent;
-import com.warpgames.voltaicforgery.voltaic.item.component.ToolEnergyStorageComponent;
 import com.warpgames.voltaicforgery.voltaic.trait.ToolTraits;
 import com.warpgames.voltaicforgery.voltaic.tool.ToolMaterialStat;
 import com.warpgames.voltaicforgery.voltaic.tool.ToolModifierEntry;
@@ -46,8 +45,6 @@ public final class VoltaicRegistries {
             ResourceKey.create(TOOL_MODIFIERS, VoltaicContent.id("redstone_haste"));
     public static final ResourceKey<ToolModifierEntry> INDUCTION_COIL =
             ResourceKey.create(TOOL_MODIFIERS, VoltaicContent.id("induction_coil"));
-    public static final ResourceKey<Item> INDUCTION_COIL_ITEM =
-            ResourceKey.create(Registries.ITEM, VoltaicContent.id("induction_coil"));
 
     private VoltaicRegistries() {}
 
@@ -143,8 +140,16 @@ public final class VoltaicRegistries {
         context.register(INDUCTION_COIL, new ToolModifierEntry(
                 ToolTraits.POWERED,
                 List.of("pickaxe", "axe", "shovel", "sword"),
-                List.of(new ToolModifierEntry.IngredientValue(Ingredient.of(items.getOrThrow(INDUCTION_COIL_ITEM).value()), 1)),
-                List.of(new ToolModifierEntry.Tier(1, 1, 1, ToolEnergyStorageComponent.DEFAULT_MAX_ENERGY))
+                List.of(
+                        new ToolModifierEntry.IngredientValue(Ingredient.of(items.getOrThrow(ResourceKey.create(Registries.ITEM, VoltaicContent.id("coil_upgrade_basic"))).value()), 1, 1),
+                        new ToolModifierEntry.IngredientValue(Ingredient.of(items.getOrThrow(ResourceKey.create(Registries.ITEM, VoltaicContent.id("coil_upgrade_advanced"))).value()), 1, 2),
+                        new ToolModifierEntry.IngredientValue(Ingredient.of(items.getOrThrow(ResourceKey.create(Registries.ITEM, VoltaicContent.id("coil_upgrade_elite"))).value()), 1, 3)
+                ),
+                List.of(
+                        new ToolModifierEntry.Tier(1, 1, 1, 50_000.0F),
+                        new ToolModifierEntry.Tier(2, 1, 1, 150_000.0F),
+                        new ToolModifierEntry.Tier(3, 1, 1, 400_000.0F)
+                )
         ));
     }
 }

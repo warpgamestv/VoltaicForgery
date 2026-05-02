@@ -125,32 +125,20 @@ public class ModificationStationBlockEntity extends BlockEntity implements Conta
 
     private Optional<ItemStack> tryModifyPreview(ItemStack tool, ItemStack mat) {
         HolderLookup.Provider registries = level == null ? null : level.registryAccess();
-        Optional<ToolModifierQuery.Match> match = ToolModifierQuery.findForStack(registries, mat);
+        Optional<ToolModifierQuery.ModifyMatch> match = ToolModifierQuery.findForToolAndMaterial(registries, tool, mat);
         if (match.isEmpty()) {
             return Optional.empty();
         }
-        ToolModifierEntry mod = match.get().entry();
-        if (!mod.allowsTool(ToolModifierHelper.toolType(tool))) {
+        ToolModifierQuery.ModifyMatch m = match.get();
+        if (m.startingTier() && m.tier().slotCost() > getRemainingModifierSlots(tool)) {
             return Optional.empty();
         }
-        List<String> normalized = ToolTraits.normalizeIds(List.of(mod.trait()));
+        List<String> normalized = ToolTraits.normalizeIds(List.of(m.entry().trait()));
         if (normalized.isEmpty()) {
             return Optional.empty();
         }
         String trait = normalized.get(0);
-
-        List<ToolModifierState> states = currentModifierStates(tool);
-        ToolModifierState state = ToolModifierState.find(states, trait).orElse(new ToolModifierState(trait, 0, 0, 0));
-        boolean startingTier = !state.hasStartedTier();
-        int tierLevel = startingTier ? state.activeLevel() + 1 : state.startedTier();
-        Optional<ToolModifierEntry.Tier> tier = mod.tier(tierLevel);
-        if (tier.isEmpty()) {
-            return Optional.empty();
-        }
-        if (startingTier && tier.get().slotCost() > getRemainingModifierSlots(tool)) {
-            return Optional.empty();
-        }
-        return Optional.of(applyModifier(tool, trait, match.get().value(), tier.get(), state, startingTier, registries));
+        return Optional.of(applyModifier(tool, trait, m.ingredientValue(), m.tier(), m.state(), m.startingTier(), registries));
     }
 
     private static List<String> currentTraits(ItemStack tool) {

@@ -106,7 +106,6 @@ public class VoltaicContent {
     public static RegistryEntry<Item> COIL_UPGRADE_BASIC;
     public static RegistryEntry<Item> COIL_UPGRADE_ADVANCED;
     public static RegistryEntry<Item> COIL_UPGRADE_ELITE;
-    public static RegistryEntry<Item> INDUCTION_COIL;
 
     public static RegistryEntry<Fluid> MOLTEN_COPPER;
     public static RegistryEntry<Fluid> FLOWING_MOLTEN_COPPER;
@@ -230,7 +229,6 @@ public class VoltaicContent {
         COIL_UPGRADE_BASIC = registerItem("coil_upgrade_basic", () -> new CoilUpgradeItem(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, id("coil_upgrade_basic"))), CoilTier.BASIC));
         COIL_UPGRADE_ADVANCED = registerItem("coil_upgrade_advanced", () -> new CoilUpgradeItem(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, id("coil_upgrade_advanced"))), CoilTier.ADVANCED));
         COIL_UPGRADE_ELITE = registerItem("coil_upgrade_elite", () -> new CoilUpgradeItem(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, id("coil_upgrade_elite"))), CoilTier.ELITE));
-        INDUCTION_COIL = registerItem("induction_coil", () -> new Item(new Item.Properties().setId(ResourceKey.create(Registries.ITEM, id("induction_coil")))));
 
         // --- Fluids ---
         RegistryEntry<Fluid>[] pair;

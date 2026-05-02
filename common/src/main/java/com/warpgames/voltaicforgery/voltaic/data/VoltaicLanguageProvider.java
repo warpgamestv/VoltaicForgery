@@ -63,7 +63,6 @@ public final class VoltaicLanguageProvider implements DataProvider {
         add(json, "item.voltaicforgery.coil_upgrade_basic", "Basic Coil Upgrade");
         add(json, "item.voltaicforgery.coil_upgrade_advanced", "Advanced Coil Upgrade");
         add(json, "item.voltaicforgery.coil_upgrade_elite", "Elite Coil Upgrade");
-        add(json, "item.voltaicforgery.induction_coil", "Induction Coil");
         add(json, "item.voltaicforgery.pickaxe_head_part", "Pickaxe Head Part");
         add(json, "item.voltaicforgery.axe_head_part", "Axe Head Part");
         add(json, "item.voltaicforgery.shovel_head_part", "Shovel Head Part");

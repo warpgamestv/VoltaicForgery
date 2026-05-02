@@ -42,7 +42,6 @@ Each block above has a `BlockItem` registered with the same ID:
 - `voltaicforgery:coil_upgrade_advanced`
 - `voltaicforgery:coil_upgrade_elite`
 - `voltaicforgery:crucible_brick`
-- `voltaicforgery:induction_coil`
 
 **Tool parts**
 
@@ -135,7 +134,7 @@ Source: `common/src/main/java/com/warpgames/voltaicforgery/voltaic/registry/Volt
 ### Tool modifiers (bootstrapped entries)
 
 - `voltaicforgery:redstone_haste`
-- `voltaicforgery:induction_coil`
+- `voltaicforgery:induction_coil` (powered-trait modifier; tiered coil upgrade items as ingredients)
 
 Loader wiring:
 

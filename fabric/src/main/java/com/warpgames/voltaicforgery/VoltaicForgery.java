@@ -69,7 +69,6 @@ public class VoltaicForgery implements ModInitializer {
             accept.invoke(entries, new ItemStack(VoltaicContent.COIL_UPGRADE_BASIC.get()));
             accept.invoke(entries, new ItemStack(VoltaicContent.COIL_UPGRADE_ADVANCED.get()));
             accept.invoke(entries, new ItemStack(VoltaicContent.COIL_UPGRADE_ELITE.get()));
-            accept.invoke(entries, new ItemStack(VoltaicContent.INDUCTION_COIL.get()));
         } catch (Exception e) {
             Constants.LOG.error("Error populating creative tab", e);
         }
